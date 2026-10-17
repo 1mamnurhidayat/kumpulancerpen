@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kumpulan Cerpen — Imam Nur Hidayat</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f2f7fd;
+      --surface: #ffffff;
+      --blue: #5c86d6;
+      --blue-dark: #23477f;
+      --blue-light: #e2edfc;
+      --text: #172b4d;
+      --muted: #7184a4;
+      --border: #e2eaf5;
+      --shadow: 0 8px 28px rgba(50, 83, 130, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background .3s, color .3s;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      border: 0;
+      padding: 10px 13px;
+      border-radius: 12px;
+    }
+
+    .primary-btn {
+      background: var(--blue);
+      color: white;
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 17px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .primary-btn:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 76px 0 68px;
+      background:
+        radial-gradient(ellipse at 90% 15%, #c9dcf9 0, transparent 38%),
+        linear-gradient(135deg, #eaf2fd, #f9fbff 65%, #dce9fa);
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5.5vw, 66px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: #566d91;
+      font-size: 17px;
+      max-width: 590px;
+      margin-bottom: 28px;
+    }
+
+    .hero-quote {
+      border-left: 3px solid var(--blue);
+      padding-left: 15px;
+      margin-top: 28px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      color: #526b91;
+    }
+
+    /* SEARCH */
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 580px;
+      padding: 6px 8px 6px 17px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .search-box span {
+      font-size: 20px;
+      color: var(--blue);
+    }
+
+    .search-box input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      padding: 10px 0;
+    }
+
+    .search-box input::placeholder {
+      color: #91a2bc;
+    }
+
+    /* COLLECTION */
+
+    .collection {
+      padding: 46px 0 76px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .sort-select {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 10px 13px;
+      border-radius: 12px;
+      outline: 0;
+    }
+
+    .filters {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 27px;
+    }
+
+    .filter-btn {
+      border: 1px solid transparent;
+      background: #e4edfa;
+      color: #46618a;
+      border-radius: 30px;
+      padding: 9px 17px;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--blue);
+      color: white;
+    }
+
+    /* STORY CARDS */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .story-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(50, 83, 130, .13);
+    }
+
+    .story-cover {
+      min-height: 165px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      font-size: 66px;
+      background: linear-gradient(135deg, #dce9fb, #a9c5ee);
+    }
+
+    .story-cover::before,
+    .story-cover::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .25);
+    }
+
+    .story-cover::before {
+      width: 160px;
+      height: 160px;
+      top: -80px;
+      right: -20px;
+    }
+
+    .story-cover::after {
+      width: 110px;
+      height: 110px;
+      bottom: -65px;
+      left: -10px;
+    }
+
+    .cover-2 { background: linear-gradient(135deg, #dceaf4, #b4d0db); }
+    .cover-3 { background: linear-gradient(135deg, #eee4fb, #c9c1f1); }
+    .cover-4 { background: linear-gradient(135deg, #d9e6fb, #a7c1e7); }
+    .cover-5 { background: linear-gradient(135deg, #f4e8db, #dfc4ac); }
+    .cover-6 { background: linear-gradient(135deg, #d9e8e5, #a5c8c3); }
+
+    .category-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 15px;
+      background: rgba(255, 255, 255, .9);
+      color: #34557f;
+      border-radius: 30px;
+      padding: 5px 11px;
+      font-size: 11px;
+      z-index: 1;
+    }
+
+    .story-content {
+      padding: 19px;
+    }
+
+    .story-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      line-height: 1.4;
+      margin-bottom: 9px;
+    }
+
+    .story-excerpt {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      min-height: 68px;
+    }
+
+    .story-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 16px;
+      padding-top: 13px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .story-meta button {
+      border: 0;
+      background: transparent;
+      color: var(--blue);
+      font-size: 20px;
+    }
+
+    .story-meta button.saved {
+      color: #d66c9b;
+    }
+
+    .read-btn {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--blue-dark);
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .read-btn:hover {
+      background: var(--blue-light);
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--surface);
+      border-radius: 18px;
+      color: var(--muted);
+    }
+
+    .empty-state h3 {
+      font-family: "Playfair Display", serif;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    /* ABOUT & FOOTER */
+
+    .about {
+      padding: 55px 0;
+      background: var(--blue-light);
+      scroll-margin-top: 80px;
+    }
+
+    .about-inner {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .about p {
+      color: #566d91;
+      line-height: 1.9;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 27px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* READER MODAL */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 34, 61, .62);
+      z-index: 100;
+      padding: 20px;
+      overflow-y: auto;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .reader {
+      width: min(720px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: var(--surface);
+      border-radius: 20px;
+      padding: clamp(22px, 5vw, 48px);
+      position: relative;
+    }
+
+    .close-btn {
+      float: right;
+      border: 0;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-size: 20px;
+    }
+
+    .reader h2 {
+      clear: both;
+      font-family: "Playfair Display", serif;
+      font-size: 35px;
+      line-height: 1.3;
+      margin: 24px 0 10px;
+    }
+
+    .reader-info {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .reader-body {
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      line-height: 2;
+      white-space: pre-line;
+    }
+
+    /* DARK MODE */
+
+    body.dark {
+      --bg: #101b2d;
+      --surface: #18263b;
+      --blue: #8aafea;
+      --blue-dark: #d5e4ff;
+      --blue-light: #263a56;
+      --text: #e8effb;
+      --muted: #a0b1ca;
+      --border: #2c3d55;
+      --shadow: 0 8px 28px rgba(0, 0, 0, .12);
+    }
+
+    body.dark .hero {
+      background: linear-gradient(135deg, #1c304c, #142239);
+    }
+
+    body.dark .hero p,
+    body.dark .hero-quote,
+    body.dark .about p {
+      color: #b8c9e2;
+    }
+
+    body.dark .filter-btn {
+      background: #263a56;
+      color: #d5e4ff;
+    }
+
+    body.dark .filter-btn.active {
+      background: var(--blue);
+      color: #13233b;
+    }
+
+    body.dark .category-tag {
+      background: #243650;
+      color: #e8effb;
+    }
+
+    body.dark .about {
+      background: #1c3048;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .story-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .navbar {
+        min-height: 66px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+        gap: 12px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+      }
+
+      .nav-actions .primary-btn {
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 47px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-cover {
+        min-height: 190px;
+      }
+
+      .story-excerpt {
+        min-height: auto;
+      }
+
+      .collection {
+        padding-top: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#beranda">Imam Nur <span>Hidayat.</span></a>
+
+      <nav class="nav-links">
+        <a href="#beranda">Beranda</a>
+        <a href="#cerpen">Cerpen</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☾</button>
+        <button class="primary-btn" id="savedBtn">♡ Koleksi Saya</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="beranda">
+    <div class="container hero-content">
+      <div class="eyebrow">Ruang Cerita & Imajinasi</div>
+
+      <h1>
+        Setiap Cerita Punya<br>
+        <span>Tempat untuk Pulang.</span>
+      </h1>
+
+      <p>
+        Kumpulan cerpen Imam Nur Hidayat tentang kehidupan,
+        perasaan, kenangan, dan hal-hal sederhana yang
+        terkadang sulit diungkapkan dengan kata-kata.
+      </p>
+
+      <div class="search-box">
+        <span>⌕</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Cari judul cerpen, tema, atau kata kunci..."
+          aria-label="Cari cerpen"
+        >
+      </div>
+
+      <div class="hero-quote">
+        "Ada cerita yang selesai di halaman terakhir,
+        ada pula yang menetap lama di dalam hati."
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <main class="container collection" id="cerpen">
+    <div class="section-heading">
+      <div>
+        <h2 id="collectionTitle">Kumpulan Cerpen</h2>
+        <p id="storyCount">Jelajahi cerita dan temukan yang dekat denganmu.</p>
+      </div>
+
+      <select id="sortSelect" class="sort-select" aria-label="Urutkan cerpen">
+        <option value="newest">Terbaru</option>
+        <option value="oldest">Terlama</option>
+        <option value="title">Judul A–Z</option>
+      </select>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-category="Semua">Semua</button>
+      <button class="filter-btn" data-category="Cinta">Cinta</button>
+      <button class="filter-btn" data-category="Persahabatan">Persahabatan</button>
+      <button class="filter-btn" data-category="Kehidupan">Kehidupan</button>
+      <button class="filter-btn" data-category="Motivasi">Motivasi</button>
+      <button class="filter-btn" data-category="Fantasi">Fantasi</button>
+      <button class="filter-btn" data-category="Refleksi">Refleksi</button>
+    </div>
+
+    <div class="story-grid" id="storyGrid"></div>
+  </main>
+
+  <!-- ABOUT -->
+  <section class="about" id="tentang">
+    <div class="container about-inner">
+      <div class="eyebrow">Tentang Penulis</div>
+      <h2>Halo, gue Imam.</h2>
+      <p>
+        Gue percaya setiap orang menyimpan cerita yang layak didengar.
+        Melalui cerpen, gue ingin merangkai perasaan, pengalaman,
+        dan imajinasi menjadi kisah yang bisa menemani siapa saja.
+        Selamat membaca dan semoga lu menemukan sesuatu yang berarti
+        di setiap halaman.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="kontak">
+    <div class="container">
+      <p>© <span id="year"></span> Imam Nur Hidayat. Dibuat dengan cerita dan rasa.</p>
+      <p style="margin-top: 5px;">Sebuah ruang kecil untuk cerita-cerita yang berarti.</p>
+    </div>
+  </footer>
+
+  <!-- READER MODAL -->
+  <div class="modal" id="readerModal" role="dialog"
+       aria-modal="true" aria-labelledby="readerTitle">
+    <article class="reader">
+      <button class="close-btn" id="closeReader" aria-label="Tutup">×</button>
+      <div class="eyebrow" id="readerCategory">Cerpen</div>
+      <h2 id="readerTitle"></h2>
+      <div class="reader-info" id="readerInfo"></div>
+      <div class="reader-body" id="readerBody"></div>
+    </article>
+  </div>
+
+  <script>
+    // DATA CERPEN
+    // Ganti judul, ringkasan, dan isi dengan karya asli lu.
+
+    const stories = [
+      {
+        id: 1,
+        title: "Langit yang Sama",
+        category: "Refleksi",
+        date: "2026-05-12",
+        minutes: 5,
+        icon: "🌆",
+        cover: "",
+        excerpt: "Tentang dua orang yang berjauhan, tetapi masih menatap langit yang sama.",
+        body: `Malam itu, kota terasa lebih sunyi dari biasanya.
+
+Aku berdiri di dekat jendela, menatap langit yang perlahan berubah gelap. Di tempat lain, mungkin seseorang sedang melakukan hal yang sama.
+
+Dulu, kami sering menghabiskan waktu dengan membicarakan hal-hal kecil. Tentang hujan yang datang tiba-tiba, kopi yang terlalu pahit, dan mimpi-mimpi yang terasa begitu dekat.
+
+Sekarang, jarak telah mengubah banyak hal. Percakapan menjadi singkat. Kabar datang sesekali. Beberapa pertanyaan bahkan tak pernah menemukan jawabannya.
+
+Namun, malam ini aku menyadari sesuatu.
+
+Langit yang kita lihat masih sama. Bintang-bintang tetap muncul, dan bulan tetap menyinari bumi tanpa bertanya siapa yang sedang merindukannya.
+
+Mungkin ada hubungan yang tidak lagi berjalan beriringan, tetapi kenangannya tetap punya tempat.
+
+Aku tersenyum kecil, lalu menutup jendela.
+
+Untuk pertama kalinya setelah sekian lama, aku merasa cukup dengan sebuah doa sederhana: semoga kita baik-baik saja, di bawah langit yang sama.`
+      },
+      {
+        id: 2,
+        title: "Hal-hal yang Tertunda",
+        category: "Kehidupan",
+        date: "2026-05-05",
+        minutes: 7,
+        icon: "☕",
+        excerpt: "Tentang mimpi yang belum sempat diraih dan keberanian untuk memulai lagi.",
+        body: `Ada begitu banyak hal yang pernah ingin kulakukan.
+
+Buku yang ingin kutulis. Kota yang ingin kukunjungi. Orang-orang yang ingin kutemui kembali. Dan versi diriku yang dulu selalu kubayangkan akan hadir suatu hari nanti.
+
+Tahun demi tahun berlalu. Sebagian mimpi berubah bentuk, sebagian lainnya masih kusimpan dalam diam.
+
+Kadang aku merasa tertinggal ketika melihat orang lain berjalan begitu jauh. Seolah-olah semua orang telah menemukan jalannya sendiri, sementara aku masih sibuk memahami peta yang kupunya.
+
+Pagi itu, aku membuat secangkir kopi dan membuka buku kosong.
+
+Tidak ada rencana besar. Tidak ada janji untuk mengubah seluruh hidup dalam semalam.
+
+Aku hanya menulis satu kalimat.
+
+Lalu satu paragraf.
+
+Ternyata, beberapa hal yang tertunda masih bisa dimulai dari langkah yang kecil.
+
+Dan hari itu, aku memilih untuk mulai.`
+      },
+      {
+        id: 3,
+        title: "Di Antara Rasa dan Waktu",
+        category: "Cinta",
+        date: "2026-04-28",
+        minutes: 6,
+        icon: "🌸",
+        excerpt: "Tentang dua hati yang bertemu, lalu belajar memahami arti sebuah perpisahan.",
+        body: `Kita bertemu ketika hujan turun di sebuah sore yang biasa.
+
+Kau meminjam payungku. Aku mengantarmu sampai ke halte. Kita berbicara tentang film, makanan, dan hal-hal yang tidak penting bagi siapa pun selain kita.
+
+Setelah itu, pertemuan menjadi kebiasaan.
+
+Aku mulai mengenali caramu tertawa, caramu diam ketika sedang lelah, dan caramu memandang dunia dengan harapan yang sulit dijelaskan.
+
+Namun, waktu punya jalannya sendiri.
+
+Ada percakapan yang semakin jarang. Ada rencana yang tak lagi jadi kenyataan. Dan ada perasaan yang tetap tinggal ketika dua orang akhirnya memilih arah yang berbeda.
+
+Kini, setiap kali hujan turun, aku masih teringat sore itu.
+
+Aku tidak tahu apakah kau juga mengingatnya.
+
+Yang kutahu, pernah ada masa ketika kehadiranmu membuat hari-hari biasa terasa istimewa.
+
+Dan bagiku, itu sudah menjadi bagian yang indah dari perjalanan.`
+      },
+      {
+        id: 4,
+        title: "Teman di Malam yang Sunyi",
+        category: "Persahabatan",
+        date: "2026-04-20",
+        minutes: 4,
+        icon: "🌙",
+        excerpt: "Kisah tentang seorang sahabat yang hadir ketika dunia terasa terlalu ramai.",
+        body: `Aku menghubunginya pukul sebelas malam.
+
+Tidak ada alasan yang jelas. Aku hanya sedang lelah dan tidak tahu harus bercerita kepada siapa.
+
+Dia mengangkat telepon setelah dering ketiga.
+
+"Kenapa?" tanyanya.
+
+Aku terdiam beberapa saat sebelum menjawab, "Enggak apa-apa. Cuma pengin ngobrol."
+
+Dia tidak mendesakku menjelaskan apa pun. Dia mulai bercerita tentang pekerjaannya, makanan yang gagal dimasak, dan tetangga yang memelihara terlalu banyak kucing.
+
+Aku tertawa.
+
+Malam itu, masalahku masih ada. Besok pagi, aku tetap harus menghadapi hal-hal yang membuatku cemas.
+
+Namun, percakapan sederhana itu membuatku merasa sedikit lebih ringan.
+
+Barangkali, persahabatan memang sering hadir dalam bentuk yang tidak rumit: seseorang yang bersedia menemani, bahkan ketika kita belum mampu menjelaskan apa yang sedang dirasakan.`
+      },
+      {
+        id: 5,
+        title: "Mulai Lagi",
+        category: "Motivasi",
+        date: "2026-04-14",
+        minutes: 5,
+        icon: "🌿",
+        excerpt: "Sebuah cerita kecil tentang keberanian menyusun hidup dari awal.",
+        body: `Pagi itu, aku bangun tanpa semangat yang istimewa.
+
+Tidak ada kabar baik. Tidak ada perubahan besar. Hari-hariku masih dipenuhi daftar pekerjaan dan pertanyaan tentang masa depan.
+
+Aku duduk di tepi tempat tidur cukup lama.
+
+Lalu aku membuka tirai.
+
+Cahaya matahari masuk perlahan. Di luar, seseorang sedang menyiram tanaman. Seorang anak berjalan ke sekolah. Dunia tetap bergerak, meskipun aku merasa tertahan.
+
+Aku mengambil buku catatan dan menuliskan tiga hal yang bisa kulakukan hari itu.
+
+Mandi. Sarapan. Menyelesaikan satu pekerjaan.
+
+Kedengarannya sederhana sekali.
+
+Tetapi sore harinya, ketika aku mencoret ketiga hal itu dari daftar, aku merasakan sesuatu yang lama hilang: rasa bahwa aku masih bisa melakukan sesuatu untuk diriku sendiri.
+
+Mungkin besok akan terasa berat lagi.
+
+Tidak apa-apa.
+
+Hari ini, aku sudah memulai.`
+      },
+      {
+        id: 6,
+        title: "Ruang yang Pernah Ramai",
+        category: "Kehidupan",
+        date: "2026-04-08",
+        minutes: 8,
+        icon: "📚",
+        excerpt: "Tentang tempat lama, kenangan, dan orang-orang yang pernah mengisinya.",
+        body: `Aku kembali ke tempat itu setelah bertahun-tahun.
+
+Catnya telah berubah. Kursi-kursi disusun dengan cara berbeda. Jendela yang dahulu sering terbuka kini tertutup rapat.
+
+Namun, ingatanku masih menyimpan suara tawa yang pernah memenuhi ruangan itu.
+
+Kami pernah duduk berjam-jam, membicarakan masa depan seolah-olah dunia bisa kami taklukkan hanya dengan keberanian dan beberapa rencana.
+
+Kami tidak tahu bahwa suatu hari, kesibukan akan mengambil sebagian waktu kami. Bahwa nomor telepon bisa tetap tersimpan, sementara percakapan perlahan menghilang.
+
+Aku menyentuh permukaan meja dan tersenyum.
+
+Ada tempat yang tidak lagi sama ketika kita kembali. Ada juga bagian dari diri kita yang ternyata masih tertinggal di sana.
+
+Sebelum pergi, aku menoleh sekali lagi.
+
+Lalu melangkah keluar, membawa kenangan itu tanpa perlu memaksanya kembali menjadi masa kini.`
+      }
+    ];
+
+    const grid = document.getElementById("storyGrid");
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+    const storyCount = document.getElementById("storyCount");
+    const collectionTitle = document.getElementById("collectionTitle");
+    const filters = document.getElementById("filters");
+
+    let activeCategory = "Semua";
+    let savedOnly = false;
+
+    // Ambil koleksi tersimpan dari browser.
+    // Data tetap ada setelah halaman ditutup selama storage tidak dihapus.
+    function getSaved() {
+      try {
+        return JSON.parse(localStorage.getItem("imamSavedStories") || "[]");
+      } catch {
+        return [];
+      }
+    }
+
+    function setSaved(ids) {
+      try {
+        localStorage.setItem("imamSavedStories", JSON.stringify(ids));
+      } catch {
+        alert("Browser tidak bisa menyimpan koleksi saat ini.");
+      }
+    }
+
+    // MENAMPILKAN KARTU CERPEN
+    function renderStories() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      let result = stories.filter(story => {
+        const searchableText = [
+          story.title,
+          story.category,
+          story.excerpt,
+          story.body
+        ].join(" ").toLowerCase();
+
+        const matchesSearch = searchableText.includes(keyword);
+        const matchesCategory =
+          activeCategory === "Semua" ||
+          story.category === activeCategory;
+
+        const matchesSaved =
+          !savedOnly || getSaved().includes(story.id);
+
+        return matchesSearch && matchesCategory && matchesSaved;
+      });
+
+      if (sortSelect.value === "newest") {
+        result.sort((a, b) => b.date.localeCompare(a.date));
+      } else if (sortSelect.value === "oldest") {
+        result.sort((a, b) => a.date.localeCompare(b.date));
+      } else if (sortSelect.value === "title") {
+        result.sort((a, b) => a.title.localeCompare(b.title));
+      }
+
+      const saved = getSaved();
+
+      collectionTitle.textContent = savedOnly
+        ? "Koleksi Cerpen Saya"
+        : "Kumpulan Cerpen";
+
+      storyCount.textContent =
+        `${result.length} cerpen ditemukan. Pilih cerita dan mulai membaca.`;
+
+      if (result.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <h3>Cerita belum ditemukan</h3>
+            <p>Coba kata kunci lain atau pilih kategori yang berbeda.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = result.map((story, index) => `
+        <article class="story-card">
+          <div class="story-cover cover-${(index % 6) + 1}">
+            <span>${story.icon}</span>
+            <span class="category-tag">${story.category}</span>
+          </div>
+
+          <div class="story-content">
+            <h3>${escapeHTML(story.title)}</h3>
+            <p class="story-excerpt">${escapeHTML(story.excerpt)}</p>
+
+            <div class="story-meta">
+              <span>${formatDate(story.date)}</span>
+              <span>${story.minutes} menit</span>
+              <button
+                class="${saved.includes(story.id) ? "saved" : ""}"
+                data-save="${story.id}"
+                aria-label="Simpan ${escapeHTML(story.title)}"
+                title="Simpan ke koleksi"
+              >${saved.includes(story.id) ? "♥" : "♡"}</button>
+            </div>
+
+            <button class="read-btn" data-read="${story.id}">
+              Baca Cerita →
+            </button>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Mengamankan teks yang ditampilkan di HTML.
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      })[char]);
+    }
+
+    function formatDate(date) {
+      return new Date(date + "T12:00:00").toLocaleDateString(
+        "id-ID",
+        { day: "numeric", month: "short", year: "numeric" }
+      );
+    }
+
+    // PENCARIAN
+    searchInput.addEventListener("input", renderStories);
+    sortSelect.addEventListener("change", renderStories);
+
+    // FILTER KATEGORI
+    filters.addEventListener("click", event => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+
+      activeCategory = button.dataset.category;
+      savedOnly = false;
+
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.classList.toggle("active", btn === button);
+      });
+
+      renderStories();
+    });
+
+    // SIMPAN DAN BACA CERPEN
+    grid.addEventListener("click", event => {
+      const saveButton = event.target.closest("[data-save]");
+      const readButton = event.target.closest("[data-read]");
+
+      if (saveButton) {
+        const id = Number(saveButton.dataset.save);
+        let saved = getSaved();
+
+        saved = saved.includes(id)
+          ? saved.filter(savedId => savedId !== id)
+          : [...saved, id];
+
+        setSaved(saved);
+        renderStories();
+      }
+
+      if (readButton) {
+        openReader(Number(readButton.dataset.read));
+      }
+    });
+
+    // KOLEKSI SAYA
+    document.getElementById("savedBtn").addEventListener("click", () => {
+      savedOnly = !savedOnly;
+      activeCategory = "Semua";
+      searchInput.value = "";
+
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.classList.toggle(
+          "active",
+          btn.dataset.category === "Semua"
+        );
+      });
+
+      renderStories();
+      document.getElementById("cerpen").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+
+    // MODAL PEMBACA CERPEN
+    const modal = document.getElementById("readerModal");
+
+    function openReader(id) {
+      const story = stories.find(item => item.id === id);
+      if (!story) return;
+
+      document.getElementById("readerCategory").textContent =
+        story.category;
+
+      document.getElementById("readerTitle").textContent =
+        story.title;
+
+      document.getElementById("readerInfo").textContent =
+        `${formatDate(story.date)} · ${story.minutes} menit membaca`;
+
+      document.getElementById("readerBody").textContent =
+        story.body;
+
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+      document.getElementById("closeReader").focus();
+    }
+
+    function closeReader() {
+      modal.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    document.getElementById("closeReader").addEventListener(
+      "click", closeReader
+    );
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal) closeReader();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeReader();
+    });
+
+    // MODE GELAP
+    const themeBtn = document.getElementById("themeBtn");
+
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+
+      const dark = document.body.classList.contains("dark");
+      themeBtn.textContent = dark ? "☀" : "☾";
+
+      try {
+        localStorage.setItem("imamTheme", dark ? "dark" : "light");
+      } catch {}
+    });
+
+    try {
+      if (localStorage.getItem("imamTheme") === "dark") {
+        document.body.classList.add("dark");
+        themeBtn.textContent = "☀";
+      }
+    } catch {}
+
+    // TAHUN OTOMATIS
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // JALANKAN WEBSITE
+    renderStories();
+  </script>
+
+</body>
+</html>
